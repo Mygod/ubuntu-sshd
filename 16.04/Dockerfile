@@ -1,8 +1,8 @@
 FROM       ubuntu:16.04
 MAINTAINER Aleksandar Diklic "https://github.com/rastasheep"
 
-ARG root_password=root
-ARG rsa='ssh-rsa Some/Garbage/Here docker@mygod.be'
+ENV root_password=${root_password:-"root"}
+ENV rsa=${rsa:-"ssh-rsa Some/Garbage/Here docker@mygod.be"}
 
 RUN apt-get update
 
